@@ -7,7 +7,7 @@ function Game() {
 
   //image
   const screamerImage = new Image();
-  screamerImage.src = "screamer-girl.jpg";
+  screamerImage.src = "./public/screamer-girl.png";
 
   //timer 
   const [timeLeft, setTimeLeft] = useState(60);
@@ -169,7 +169,8 @@ useEffect(() => {
       <canvas ref={canvasRef} width={500} height={300} style={{ border: "1px solid black" }} />
 
       {timeLeft <= 0 && (
-        <img 
+        <>
+         <img 
           src={screamerImage.src} 
           alt="Jumpscare"
           style={{
@@ -182,6 +183,10 @@ useEffect(() => {
             objectFit: "cover"
           }}
         />
+        <audio src="./public/harold-screamer.mp3" autoPlay></audio>
+        </>
+       
+
       )}
 
       <div>

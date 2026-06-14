@@ -1,6 +1,12 @@
 import React, { useRef, useEffect, useState } from "react";
+import './App.css';
 
 function Game() {
+
+  useEffect(() => {
+    document.title = "My Game";
+  }, []);
+
   const canvasRef = useRef(null);
   const [running, setRunning] = useState(false);
   const [score, setScore] = useState(0);
@@ -208,7 +214,17 @@ useEffect(() => {
         }}>Reset</button>
 
       </div>
+
+      <div className="App">
+      <Game />
+      <footer style={{ textAlign: "center", marginTop: "20px" }}>
+        © 2026 Made by Zenand Sala
+      </footer>
     </div>
+
+    </div>
+
+    
   );
 }
 

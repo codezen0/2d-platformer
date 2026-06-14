@@ -137,6 +137,20 @@ useEffect(() => {
       }
     };
 
+    if (!running) {
+  // Draw instructions only when game is not running
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "white";
+  ctx.font = "20px Arial";
+  ctx.textAlign = "center";
+  ctx.fillText("Instructions:", canvas.width / 2, canvas.height / 2 - 50);
+  ctx.fillText("Press Start to Begin", canvas.width / 2, canvas.height / 2 - 20);
+  ctx.fillText("Use W/Arrow Up to move up", canvas.width / 2, canvas.height / 2 + 20);
+  ctx.fillText("Use S/Arrow Down to move down", canvas.width / 2, canvas.height / 2 + 50);
+  ctx.fillText("Avoid the incoming objects until timer runs out", canvas.width / 2, canvas.height / 2 + 80);
+}
+
+
     if (running) {
       spawnEnemy();
       animationFrameId = requestAnimationFrame(gameLoop);
@@ -212,6 +226,11 @@ useEffect(() => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
           }
         }}>Reset</button>
+
+
+
+
+       
 
       </div>
 
